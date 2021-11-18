@@ -1,0 +1,219 @@
+<div class="container">
+  <div class="row">
+    <main class="col-md-12">
+      <!-- Start your code here -->
+      <br />
+      <h1>Welcome to HTML Demo page</h1>
+      <p>
+        This page is divided into different sections which includes tables,
+        list, images, audio files and video files.
+      </p>
+
+      <h2>Tables</h2>
+      <table>
+        <caption>
+          Table 1: Students info
+        </caption>
+        <thead>
+          <tr>
+            <th rowspan="2">#</th>
+            <th colspan="4">Details</th>
+          </tr>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Program</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>122260219</td>
+            <td>Pulkit Yadav</td>
+            <td>DAD</td>
+            <td>pyadav9@myseneca.ca</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>12345678</td>
+            <td>Peter Parker</td>
+            <td>PMIT</td>
+            <td>peter@myseneca.ca</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>87654321</td>
+            <td>Bruce Wayne</td>
+            <td>DAD</td>
+            <td>bruce@myseneca.ca</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="5">Total # of Students: 3</td>
+          </tr>
+        </tfoot>
+      </table>
+      <p>
+        The above table shows the students in a college with the details like
+        ID, Name, Program and Email ID.
+      </p>
+      <br />
+
+      <table>
+        <caption>
+          Table 2: Grades
+        </caption>
+        <thead>
+          <tr>
+            <th rowspan="2">Course ID</th>
+            <th colspan="2">Students</th>
+          </tr>
+          <tr>
+            <th>Pulkit</th>
+            <th>Bruce</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>SQL710</td>
+            <td>A</td>
+            <td>A</td>
+          </tr>
+          <tr>
+            <td>WEB700</td>
+            <td>B</td>
+            <td>A</td>
+          </tr>
+          <tr>
+            <td>OPS705</td>
+            <td>A+</td>
+            <td>B</td>
+          </tr>
+          <tr>
+            <td>JAV745</td>
+            <td>A</td>
+            <td>B+</td>
+          </tr>
+          <tr>
+            <td>DES720</td>
+            <td>A</td>
+            <td>B+</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>Total Average Grade</td>
+            <td>A</td>
+            <td>B+</td>
+          </tr>
+        </tfoot>
+      </table>
+      <p>
+        The above table shows the grades of students in each course with the
+        total average grade.
+      </p>
+      <br />
+
+      <h2>Lists</h2>
+      <ul>
+        <li>
+          WEB700
+          <ol>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Node</li>
+            <li>Express</li>
+            <li>Postgres</li>
+          </ol>
+        </li>
+        <li>
+          JAV745
+          <ol>
+            <li>Java</li>
+          </ol>
+        </li>
+        <li>
+          DES720
+          <ol>
+            <li>SQL Plus</li>
+            <li>SQL Developer</li>
+          </ol>
+        </li>
+        <li>
+          SQL710
+          <ol>
+            <li>SQL Server</li>
+          </ol>
+        </li>
+        <li>
+          OPS705
+          <ol>
+            <li>Linux/Unix</li>
+          </ol>
+        </li>
+      </ul>
+      <p>
+        This list shows all the courses in DAD program for first semester as
+        well as the technologies and tools that will be used in those courses.
+      </p>
+      <br />
+
+      <h2>City of Toronto</h2>
+      <img
+        src="https://images.dailyhive.com/20190829094047/shutterstock_546767308.jpg"
+        alt="Nathan Pillips Square"
+        class="center"
+      /><br />
+      <img
+        src="https://images.dailyhive.com/20180404061646/shutterstock_551281804.jpg"
+        alt="Yonge-Dundas Square"
+        class="center"
+      /><br />
+      <img
+        src="https://smartcdn.prod.postmedia.digital/nationalpost/wp-content/uploads/2021/01/CN-Tower-2.png"
+        alt="CN Tower"
+        class="center"
+      />
+      <p class="text">These are the images of Toronto City.</p>
+      <br />
+
+      <h2>Audio Files</h2>
+      <audio controls>
+        <source
+          src="https://pat-crawford-sdds.netlify.app/shared/fall-2021/web700/A3/sample-audio.mp3"
+          type="audio/mp3"
+        />
+        <source
+          src="https://pat-crawford-sdds.netlify.app/shared/fall-2021/web700/A3/sample-audio.ogg"
+          type="audio/ogg"
+        />
+        <p>Sorry, your browser doesn't support this audio format.</p>
+        <p></p>
+      </audio>
+      <p>This is sample audio.</p>
+      <br />
+
+      <h2>Video files</h2>
+      <video width="320" height="240" controls>
+        <source
+          src="https://pat-crawford-sdds.netlify.app/shared/fall-2021/web700/A3/sample-video.mp4"
+          type="video/mp4"
+        />
+        <source
+          src="https://pat-crawford-sdds.netlify.app/shared/fall-2021/web700/A3/sample-video.ogg"
+          type="video/ogg"
+        />
+        <source
+          src="https://pat-crawford-sdds.netlify.app/shared/fall-2021/web700/A3/sample-video.webm"
+          type="video/webm"
+        />
+        <p>Sorry, your browser doesn't support this video format.</p>
+      </video>
+      <p>This is sample video.</p>
+
+      <!-- End your code here  -->
+    </main>
+  </div>
+</div>
