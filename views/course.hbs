@@ -3,7 +3,7 @@
     <br />
     <h2>{{course.courseDescription}}</h2>
     <hr />
-    <form>
+    <form method="post" action="/course/update">
       <div class="row">
         <div class="col-md-3">
           <div class="form-group">
@@ -13,7 +13,6 @@
               id="courseCode"
               name="courseCode"
               type="text"
-              readonly
               value="{{course.courseCode}}"
             />
           </div>
@@ -26,13 +25,19 @@
               id="courseDescription"
               name="courseDescription"
               type="text"
-              readonly
               value="{{course.courseDescription}}"
             />
           </div>
         </div>
+        <div class="col-md-9">
+          <div class="form-group">
+            
+          </div>
+        </div>
       </div>
       <hr />
+      <input type="submit" class="btn btn-primary float-right" value="Update Course" /><br /><br /><br />
+      <input type="hidden" id="hiddencourseId" name="courseId" value="{{course.courseId}}"/>
     </form>
   </div>
 </div>
