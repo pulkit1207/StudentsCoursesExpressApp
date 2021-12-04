@@ -61,10 +61,9 @@ module.exports.getAllStudents = function () {
       .then((data) => {
         resolve(data);
       })
-      .catch(() => {
-        reject("no results returned");
+      .catch((err) => {
+        reject("No results returned : " + err);
       });
-    resolve();
   });
 };
 
@@ -97,16 +96,16 @@ module.exports.getCourses = function () {
 };
 
 module.exports.getStudentsByCourse = function (course1) {
-  return new Promise((resolve, reject) => {
+  return new Promise(function (resolve, reject) {
     Student.findAll({
       where: {
         course: course1,
       },
     })
-      .then((data) => {
-        resolve(data);
+      .then((studentsByCourse) => {
+        resolve(studentsByCourse);
       })
-      .catch(() => {
+      .catch((err) => {
         reject("no results returned");
       });
   });
@@ -146,13 +145,12 @@ module.exports.getCourseById = function (num) {
 
 module.exports.updateStudent = function (studentData) {
   studentData.TA = studentData.TA ? true : false;
-    for (let i in studentData) {
-      if (studentData[i] == "") {
-        studentData[i] = null;
-      }
+  for (let i in studentData) {
+    if (studentData[i] == "") {
+      studentData[i] = null;
     }
+  }
   return new Promise((resolve, reject) => {
-    
     Student.update(studentData, {
       where: {
         studentNum: studentData.studentNum,
@@ -186,19 +184,20 @@ module.exports.addCourse = function (courseData) {
 
 module.exports.addStudent = function (studentData) {
   studentData.TA = studentData.TA ? true : false;
-    for (let i in studentData) {
-      if (studentData[i] == "") {
-        studentData[i] = null;
-      }
+
+  for (let i in studentData) {
+    if (studentData[i] == "") {
+      studentData[i] = null;
     }
-  return new Promise((resolve, reject) => {
-    
+  }
+
+  return new Promise(function (resolve, reject) {
     Student.create(studentData)
-      .then(() => {
-        resolve("Created");
+      .then((newStudent) => {
+        resolve("New Student Added");
       })
-      .catch(() => {
-        reject("unable to create student");
+      .catch((err) => {
+        reject("Unable to add new student");
       });
   });
 };
@@ -210,7 +209,6 @@ module.exports.updateCourse = function (courseData) {
     }
   }
   return new Promise((resolve, reject) => {
-    
     Course.update(courseData, {
       where: {
         courseId: courseData.courseId,

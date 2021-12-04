@@ -102,33 +102,27 @@ app.post("/course/update", (req, res) => {
 app.get("/students", (req, res) => {
   if (req.query.course) {
     Data.getStudentsByCourse(req.query.course)
-      .then(function (courseStudents) {
+      .then((studentData) => {
         res.render("students", {
-          data: courseStudents,
+          students: studentData,
         });
       })
-      .catch(function (err) {
+      .catch(() => {
         res.render("students", {
-          message: "No results",
+          message: "no results",
         });
       });
   } else {
     Data.getAllStudents()
-      .then(function (students) {
-        if (students.length > 0) {
-          res.render("students", {
-            data: students,
-          });
+      .then((data) => {
+        if (data.length > 0) {
+          res.render("students", { students: data });
         } else {
-          res.render("students", {
-            message: "No Results",
-          });
+          res.render("students", { message: "no results" });
         }
       })
-      .catch(function (err) {
-        res.render("students", {
-          message: "No results",
-        });
+      .catch(() => {
+        res.render("students", { message: "no results" });
       });
   }
 });
@@ -150,18 +144,17 @@ app.get("/courses", (req, res) => {
 });
 
 app.get("/student/:studentNum", (req, res) => {
-  // initialize an empty object to store the values
   let viewData = {};
   Data.getStudentByNum(req.params.studentNum)
     .then((data) => {
       if (data) {
-        viewData.student = data; //store student data in the "viewData" object as "student"
+        viewData.student = data;
       } else {
-        viewData.student = null; // set student to null if none were returned
+        viewData.student = null;
       }
     })
     .catch(() => {
-      viewData.student = null; // set student to null if there was an error
+      viewData.student = null;
     })
     .then(Data.getCourses)
     .then((data) => {
@@ -173,14 +166,13 @@ app.get("/student/:studentNum", (req, res) => {
       }
     })
     .catch(() => {
-      viewData.courses = []; // set courses to empty if there was an error
+      viewData.courses = [];
     })
     .then(() => {
       if (viewData.student == null) {
-        // if no student - return an error
         res.status(404).send("Student Not Found");
       } else {
-        res.render("student", { viewData: viewData }); // render the "student" view
+        res.render("student", { viewData: viewData });
       }
     });
 });
@@ -240,14 +232,10 @@ app.get("/about", (req, res) => {
 app.get("/students/add", (req, res) => {
   Data.getCourses()
     .then((data) => {
-      res.render("addStudent", {
-        courses: data,
-      });
+      res.render("addStudent", { courses: data });
     })
     .catch(() => {
-      res.render("addStudent", {
-        courses: [],
-      });
+      res.render("addStudent", { courses: [] });
     });
 });
 
