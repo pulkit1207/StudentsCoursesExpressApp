@@ -62,7 +62,7 @@ module.exports.getAllStudents = function () {
         resolve(data);
       })
       .catch((err) => {
-        reject("No results returned : " + err);
+        reject("no results returned");
       });
   });
 };
@@ -95,17 +95,17 @@ module.exports.getCourses = function () {
   });
 };
 
-module.exports.getStudentsByCourse = function (course1) {
+module.exports.getStudentsByCourse = function (courseData) {
   return new Promise(function (resolve, reject) {
     Student.findAll({
       where: {
-        course: course1,
+        course: courseData,
       },
     })
-      .then((studentsByCourse) => {
-        resolve(studentsByCourse);
+      .then((data) => {
+        resolve(data);
       })
-      .catch((err) => {
+      .catch(() => {
         reject("no results returned");
       });
   });
@@ -119,7 +119,7 @@ module.exports.getStudentByNum = function (num) {
       },
     })
       .then((data) => {
-        resolve(data[0]);
+        resolve(data);
       })
       .catch(() => {
         reject("no results returned");
@@ -135,7 +135,7 @@ module.exports.getCourseById = function (num) {
       },
     })
       .then((data) => {
-        resolve(data[0]);
+        resolve(data);
       })
       .catch(() => {
         reject("no results returned");
@@ -193,11 +193,11 @@ module.exports.addStudent = function (studentData) {
 
   return new Promise(function (resolve, reject) {
     Student.create(studentData)
-      .then((newStudent) => {
-        resolve("New Student Added");
+      .then(() => {
+        resolve("new student added");
       })
-      .catch((err) => {
-        reject("Unable to add new student");
+      .catch(() => {
+        reject("unable to add new student");
       });
   });
 };

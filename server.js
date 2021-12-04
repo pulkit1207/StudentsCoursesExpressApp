@@ -95,7 +95,7 @@ app.post("/course/update", (req, res) => {
       res.redirect("/courses");
     })
     .catch(() => {
-      res.json({ message: "Error" });
+      res.json({ message: "error" });
     });
 });
 
@@ -213,7 +213,7 @@ app.get("/student/delete/:studentNum", (req, res) => {
     .catch(() => {
       res
         .status(500)
-        .json({ message: "Unable to Remove e Student / Student not found)" });
+        .json({ message: "Unable to Remove Student / Student not found)" });
     });
 });
 
