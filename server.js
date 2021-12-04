@@ -6,7 +6,7 @@
  *
  * Name: Pulkit Yadav Student ID: 122260219 Date: 03 December 2021
  *
- * Online (Heroku) Link: https://web007-assignment5.herokuapp.com/
+ * Online (Heroku) Link: https://web700-assignment6.herokuapp.com/
  *
  ********************************************************************************/
 
