@@ -1,10 +1,6 @@
 /*********************************************************************************
- * WEB700 – Assignment 06
- * I declare that this assignment is my own work in accordance with Seneca Academic Policy. No part
- * of this assignment has been copied manually or electronically from any other source
- * (including 3rd party web sites) or distributed to other students.
  *
- * Name: Pulkit Yadav Student ID: 122260219 Date: 03 December 2021
+ * Name: Pulkit Yadav Date: 03 December 2021
  *
  * Online (Heroku) Link: https://web700-assignment6.herokuapp.com/
  *
@@ -50,7 +46,7 @@ app.engine(
 
 app.set("view engine", ".hbs");
 
-const HTTP_PORT = process.env.PORT || 8080;
+const HTTP_PORT = process.env.PORT || 8081;
 
 app.use(express.static("public"));
 
